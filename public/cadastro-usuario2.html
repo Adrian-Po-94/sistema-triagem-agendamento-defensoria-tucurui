@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: [Data de criação]
+    Descrição: Página para cadastrar usuários no Sistema da Defensoria Pública.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilo personalizado -->
+</head>
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links para outras páginas -->
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="cadastro-usuario2.html">Cadastrar Usuário</a></li>
+                <li><a href="cadastro-defensor.html">Cadastrar Defensor</a></li>
+                <li><a href="cadastro-agendamento.html">Cadastrar Agendamento</a></li>
+                <li><a href="listar-agendamentos.html">Ver Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <!-- Botão de logout -->
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn">Sair</button>
+        </div>
+        
+        <h2>Cadastrar Usuário</h2>
+        
+        <!-- Formulário de cadastro -->
+        <form id="cadastro-usuario">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" name="matricula" required autocomplete="off">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required autocomplete="off">
+
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required placeholder="Digite o CPF" 
+                   pattern="\d{11}" title="Digite um CPF válido com 11 dígitos" autocomplete="off">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Digite o email" autocomplete="off">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required placeholder="Digite uma senha" autocomplete="off">
+
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <!-- Elemento para exibir feedback ao usuário -->
+        <div id="feedback" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Rodapé com informações legais -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para lidar com lógica do formulário -->
+    <script src="script.js"></script>
+</body>
+</html>

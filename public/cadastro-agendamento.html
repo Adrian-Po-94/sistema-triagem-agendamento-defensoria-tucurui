@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Página para cadastrar agendamentos no Sistema de Triagem e Agendamento da Defensoria Pública.
+    Contém um formulário para preencher dados do atendido, defensor, assunto, observações e data/hora do agendamento.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Agendamento</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilo da página -->
+</head>
+<body>
+    <!-- Cabeçalho com o título do sistema e a navegação -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links de navegação para diferentes páginas do sistema -->
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="cadastro-usuario2.html">Cadastrar Usuário</a></li>
+                <li><a href="cadastro-defensor.html">Cadastrar Defensor</a></li>
+                <li><a href="cadastro-agendamento.html">Cadastrar Agendamento</a></li>
+                <li><a href="listar-agendamentos.html">Ver Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Container principal da página -->
+    <div class="container">
+        <!-- Área de ações no topo da página, com o botão de logout -->
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn">Sair</button>
+        </div>
+
+        <!-- Título da página -->
+        <h2>Cadastrar Agendamento</h2>
+
+        <!-- Formulário para cadastrar o agendamento -->
+        <form id="cadastro-agendamento">
+            <!-- Seletor de defensor (preenchido via JavaScript) -->
+            <label for="defensor_id">Selecione o Defensor:</label>
+            <select id="defensor_id" name="defensor_id" required>
+                <!-- Preencher via JavaScript com defensores -->
+            </select>
+
+            <!-- Campo de entrada para o nome do atendido -->
+            <label for="nome">Nome do Atendido:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <!-- Campo de entrada para o telefone do atendido -->
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required>
+
+            <!-- Seletor de assunto (preenchido via JavaScript) -->
+            <label for="assunto_id">Assunto:</label>
+            <select id="assunto_id" name="assunto_id" required>
+                <!-- Preencher via JavaScript com assuntos -->
+            </select>
+
+            <!-- Campo de texto para observações sobre o agendamento -->
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="observacao"></textarea>
+
+            <!-- Campo para data e hora do agendamento -->
+            <label for="data_hora">Data e Hora:</label>
+            <input type="datetime-local" id="data_hora" name="data_hora" required>
+
+            <!-- Botão para submeter o formulário -->
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <!-- Div para exibição de feedback (mensagens de erro ou sucesso) -->
+        <div id="feedback" style="margin-top: 10px;"></div> <!-- Elemento para feedback -->
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Link para o script JavaScript -->
+    <script src="script.js"></script> <!-- Incluindo seu script -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Página inicial do Sistema da Defensoria Pública. Contém links para funcionalidades como cadastro de usuários, defensores e agendamentos.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema da Defensoria Pública</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilo personalizado -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Fonte Roboto -->
+</head>
+<body>
+    <!-- Cabeçalho com título e navegação -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links de navegação para as principais funcionalidades -->
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="cadastro-usuario2.html">Cadastrar Usuário</a></li>
+                <li><a href="cadastro-defensor.html">Cadastrar Defensor</a></li>
+                <li><a href="cadastro-agendamento.html">Cadastrar Agendamento</a></li>
+                <li><a href="lista-agendamentos.html">Ver Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Conteúdo principal da página -->
+    <div class="container">
+        <!-- Botão de logout -->
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn">Sair</button>
+        </div>
+        
+        <!-- Boas-vindas ao sistema -->
+        <h2>Bem-vindo!</h2>
+        <h3>Sistema Defensoria Pública</h3>
+       
+        <!-- Área de feedback para mensagens de sistema -->
+        <div id="feedback" style="margin-top: 10px;"></div>
+    </div>
+
+    <!-- Rodapé com direitos autorais -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

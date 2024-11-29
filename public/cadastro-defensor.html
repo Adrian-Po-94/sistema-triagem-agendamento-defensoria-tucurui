@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Página para cadastrar defensores no Sistema de Triagem e Agendamento da Defensoria Pública.
+    Contém um formulário para preencher nome e tipo de defensor, além de links de navegação para outras páginas do sistema.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Defensor</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilo da página -->
+</head>
+<body>
+    <!-- Cabeçalho com o título do sistema e a navegação -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links de navegação para diferentes páginas do sistema -->
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="cadastro-usuario2.html">Cadastrar Usuário</a></li>
+                <li><a href="cadastro-defensor.html">Cadastrar Defensor</a></li>
+                <li><a href="cadastro-agendamento.html">Cadastrar Agendamento</a></li>
+                <li><a href="listar-agendamentos.html">Ver Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Container principal da página -->
+    <div class="container">
+        <!-- Área de ações no topo da página, com o botão de logout -->
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn">Sair</button>
+        </div>
+
+        <!-- Título da página -->
+        <h2>Cadastrar Defensor</h2>
+
+        <!-- Formulário para cadastrar o defensor -->
+        <form id="cadastro-defensor">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required> <!-- Campo de entrada para o nome do defensor -->
+        
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required> <!-- Seleção para o tipo de defensor -->
+                <option value="defensor">Defensor</option>
+                <option value="servidor">Servidor</option>
+                <option value="estagiario">Estagiário</option>
+                <option value="assessor">Assessor</option>
+            </select>
+        
+            <!-- Botão para submeter o formulário -->
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <!-- Div para exibição de feedback (mensagens de erro ou sucesso) -->
+        <div id="feedback" style="margin-top: 10px;"></div> <!-- Elemento para feedback -->
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Link para o script JavaScript -->
+    <script src="script.js"></script> <!-- Incluindo seu script -->
+</body>
+</html>

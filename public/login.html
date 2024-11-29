@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Página de login para o Sistema de Triagem e Agendamento da Defensoria Pública.
+    Permite que os usuários entrem no sistema com CPF e senha.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema da Defensoria Pública</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilos personalizados -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Fonte Roboto -->
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links de navegação -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro-usuario.html">Cadastrar Usuário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <h2>Login</h2>
+        <!-- Formulário de login -->
+        <form id="loginForm">
+            <!-- Campo para CPF -->
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <!-- Campo para senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <!-- Botão para submeter o formulário -->
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Div para mensagens de erro ou sucesso -->
+        <div id="mensagem" class="mensagem"></div>
+
+        <!-- Link para recuperação de senha -->
+        <p><a href="recuperar-senha.html">Esqueceu sua senha?</a></p>
+    </div>
+    
+    <!-- Rodapé do site -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript para funcionalidades da página -->
+    <script src="script.js"></script>
+</body>
+</html>

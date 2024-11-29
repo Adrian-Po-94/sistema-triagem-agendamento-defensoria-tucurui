@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Este é o formulário de redefinição de senha. Ele permite que o usuário insira uma nova senha usando um token de redefinição fornecido na URL.
+    O token é automaticamente preenchido no campo oculto do formulário. Ao enviar o formulário, uma requisição POST é feita para o servidor com o token e a nova senha.
+    O servidor processa a solicitação e retorna uma mensagem indicando se a redefinição foi bem-sucedida ou se ocorreu algum erro.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Redefinir Senha</h2>
+        <form id="resetar-senha-form">
+            <input type="hidden" id="token" name="token" value="">
+            <label for="nova_senha">Nova Senha:</label>
+            <input type="password" id="nova_senha" name="nova_senha" required>
+            <button type="submit">Redefinir Senha</button>
+        </form>
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        // Função para obter o token da URL
+        function getTokenFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('token');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = getTokenFromUrl();
+            document.getElementById('token').value = token;
+
+            document.getElementById('resetar-senha-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const nova_senha = document.getElementById('nova_senha').value;
+
+                const response = await fetch(`/resetar-senha/${token}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nova_senha })
+                });
+
+                const mensagem = document.getElementById('mensagem');
+                if (response.ok) {
+                    mensagem.textContent = 'Senha redefinida com sucesso!';
+                } else {
+                    const data = await response.json();
+                    mensagem.textContent = data.message || 'Erro ao redefinir a senha.';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

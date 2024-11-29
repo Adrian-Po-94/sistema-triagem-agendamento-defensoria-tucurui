@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- 
+    Autor: Adrian Caldas Pó
+    Data: 29/11/2024
+    Descrição: Página para listar agendamentos no Sistema de Triagem e Agendamento da Defensoria Pública.
+    Contém uma tabela para visualizar os agendamentos existentes, com a opção de editar ou realizar ações sobre cada agendamento.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Agendamentos - Sistema da Defensoria Pública</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilo da página -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <style>
+        /* Estilo do Modal */
+        .modal {
+            display: none; /* Oculta o modal por padrão */
+            position: fixed; /* Fixa o modal na tela */
+            z-index: 1000; /* Fica acima de outros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+        }
+        .modal-content {
+            background-color: #fefefe; /* Cor de fundo do conteúdo do modal */
+            margin: 15% auto; /* Margem para centralizar */
+            padding: 20px;
+            border: 1px solid #888; /* Borda */
+            width: 80%; /* Largura do conteúdo */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com o título do sistema e a navegação -->
+    <header class="header">
+        <h1>Sistema de Triagem e Agendamento</h1>
+        <nav>
+            <ul>
+                <!-- Links de navegação para diferentes páginas do sistema -->
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="cadastro-usuario2.html">Cadastrar Usuário</a></li>
+                <li><a href="cadastro-defensor.html">Cadastrar Defensor</a></li>
+                <li><a href="cadastro-agendamento.html">Cadastrar Agendamento</a></li>
+                <li><a href="listar-agendamentos.html">Ver Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Container principal da página -->
+    <div class="container">
+        <!-- Área de ações no topo da página, com o botão de logout -->
+        <div class="header-actions">
+            <button id="logoutBtn" class="btn">Sair</button>
+        </div>
+        
+        <!-- Título da página -->
+        <h2>Lista de Agendamentos</h2>
+
+        <!-- Tabela para listar os agendamentos -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Defensor</th>
+                    <th>Cliente</th>
+                    <th>Telefone</th>
+                    <th>Assunto</th>
+                    <th>Observação</th>
+                    <th>Data e Hora</th>
+                    <th>Ações</th> <!-- Coluna para ações como editar e excluir -->
+                </tr>
+            </thead>
+            <tbody id="agendamentos-list">
+                <!-- Linhas dos agendamentos serão inseridas aqui via JavaScript -->
+            </tbody>
+        </table>
+        
+        <!-- Link para cadastrar um novo agendamento -->
+        <a href="cadastro-agendamento.html">Cadastrar Novo Agendamento</a>
+    </div>
+
+    <!-- Modal para Edição de Agendamento -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <h4>Editar Agendamento</h4>
+            <!-- Campo oculto para armazenar o ID do agendamento que está sendo editado -->
+            <input type="hidden" id="agendamento-id">
+            
+            <!-- Seletor de defensor para edição -->
+            <label for="defensor-editar">Defensor:</label>
+            <select id="defensor-editar" required></select>
+
+            <!-- Campo para editar o nome do cliente -->
+            <label for="nome-editar">Nome do Cliente:</label>
+            <input type="text" id="nome-editar" required>
+
+            <!-- Campo para editar o telefone do cliente -->
+            <label for="telefone-editar">Telefone:</label>
+            <input type="text" id="telefone-editar" required>
+
+            <!-- Seletor de assunto para edição -->
+            <label for="assunto-editar">Assunto:</label>
+            <select id="assunto-editar" required></select>
+
+            <!-- Campo para editar observações sobre o agendamento -->
+            <label for="observacao-editar">Observação:</label>
+            <textarea id="observacao-editar"></textarea>
+
+            <!-- Campo para editar data e hora do agendamento -->
+            <label for="data-hora-editar">Data e Hora:</label>
+            <input type="datetime-local" id="data-hora-editar" name="data_hora" required>
+
+            <!-- Botões para salvar ou cancelar a edição -->
+            <button onclick="salvarEdicaoAgendamento()">Salvar</button>
+            <button onclick="fecharModalEditar()">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Defensoria Pública. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Link para o script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
